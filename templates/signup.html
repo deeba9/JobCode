@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <title>SignUp Form</title>
+  <style>
+      .container {
+    border: 1px solid #ccc;
+    max-width: 350px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+    padding: 20px; /* Adjust the padding as needed */
+    background-color: #e4e4e450;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    line-height: 1; /* Adjust the line-height as needed */
+  }
+
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
+    }
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <!-- Left -->
+         <h5 class="text-white"><i class="fa fa-user-tie me-2"></i> JOBCODE - SIGNUP</h5>
+      </div>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="{{url_for ('static', filename = 'img/signup.png')}}" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form action ="/signup", method="POST">
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3">Register with</p>
+              <a href="https://www.facebook.com"><i class="fab fa-facebook-f fw-normal" style="padding-right: 10px;"></i></a>
+              <a href="https://www.instagram.com"><i class="fab fa-instagram fw-normal" style="padding-right: 10px;"></i></a>
+              <a href="https://www.twitter.com"><i class="fab fa-twitter fw-normal" style="padding-right: 10px;"></i></a>
+            </div>
+
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0">Or</p>
+            </div>
+        <div class="container">
+          <!--Type of user-->
+          <div class="form-outline mb-4">
+              <label style="font-weight:bold"> Select your role:</label><br>
+              <label><input type="radio" name="role" value="interviewer" required="True">
+              Interviewer
+              </label><br>
+              <label>
+               <input type="radio" name="role" value="interviewee">
+              Interviewee
+              </label>
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3" style="font-weight: bold">Email address</label>
+              <input type="email" id="form3Example3" name = "email" class="form-control"
+                placeholder="123@example.com"  required="True" pattern="[a-zA-Z0-9._%+-]+@gmail.com$">
+            </div>
+            <p style="color: darkred; font-size: small">{{msg}}</p>
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+                <label class="form-label" for="form3Example4" style="font-weight: bold">Password</label>
+              <input type="password" id="form3Example4" name="password" class="form-control"
+                placeholder="password" required="True">
+            </div>
+          <p style="color: darkred; font-size: small">{{msg2}}</p>
+            </div>
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <input type="submit" value="Register"  type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem;
+               padding-right: 2.5rem;">
+              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="/login/form" class="link-danger">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <!-- Right -->
+      <div>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </div>
+  </section>
+
+</body>
+
+</html>

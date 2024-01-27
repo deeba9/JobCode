@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Interviewee Signup</title>
+  <style>
+      .container {
+  max-width: 350px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #e4e4e450;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* Added flex display */
+   flex-wrap: wrap; /* Allow wrapping of form groups */
+    gap: 10px; /* Adjust the gap between form groups */
+    line-height: 2;
+}
+
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
+    }
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    @media (max-width: 700px) {
+      .h-custom {
+        height: 100%;
+      }
+    .form-group {
+    flex-basis: 100%; /* Make each form group take 100% width */
+  }
+    }
+  </style>
+</head>
+
+<body>
+ <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <!-- Left -->
+         <h5 class="text-white"><i class="fa fa-user-tie me-2"></i>INTERVIEWEE-SIGNUP</h5>
+      </div>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="{{ url_for ('static' , filename='img/Personal data-bro.png')}}" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <h3 style="text-align: center; font-family:'inherit'; margin-top: 20px">WELCOME TO JOBCODE!</h3>
+          <form action="/data/interviewee" method="POST">
+          <div class="container">
+            <!-- Name input -->
+              <div class="form-group">
+                  <label style="font-weight:bold" class="form-label" for="name">Name</label>
+                  <input style="background-color: aliceblue" type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required="True">
+            <!--subject input -->
+                <label style="font-weight:bold" class="form-label" for="major">Major</label>
+                <select style="background-color: aliceblue" id="major" name="major" class="form-control" required>
+                      <option value="">Select your major</option>
+                      <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                  </select>
+            <!-- cgpa input -->
+                  <label style="font-weight:bold" class="form-label" for="cgpa">CGPA</label>
+                  <input style="background-color: aliceblue" type="double" id="cgpa" name="cgpa" class="form-control" placeholder="Enter your cgpa" required="True">
+            <!-- institute input -->
+                  <label style="font-weight:bold" class="form-label" for="cgpa">Institute</label>
+                  <input style="background-color: aliceblue" type="text" id="institute" name="institute" class="form-control" placeholder="Enter your university" required="True">
+            <!-- cgpa input -->
+                  <label style="font-weight:bold" class="form-label" for="bio">About yourself</label>
+                  <input style="background-color: aliceblue" type="text" id="bio" name="bio" class="form-control" placeholder="Enter something about yourself" required="True">
+            </div>
+          </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <a href = "/login/form" ><input type="submit" value="Submit" type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"></a>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="/login/form" class="link-danger">LOGIN</a></p>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <!-- Left -->
+      <!-- Right -->
+      <div>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </div>
+  </section>
+</body>
+
+</html>
